@@ -2,21 +2,28 @@ import { NextResponse } from 'next/server';
 import fs from 'fs/promises';
 import path from 'path';
 
-const DATA_FILE_PATH = path.join(process.cwd(), 'src', 'data', 'apps.json');
+const DATA_FILE_PATH = path.resolve(process.cwd(), 'src', 'data', 'apps.json');
 
 async function getAppsData() {
   try {
     const data = await fs.readFile(DATA_FILE_PATH, 'utf-8');
     return JSON.parse(data);
   } catch (error) {
+    console.error("[Apps API] Failed to read apps data at:", DATA_FILE_PATH);
     return [];
   }
 }
 
 async function saveAppsData(apps: any[]) {
-  const dir = path.dirname(DATA_FILE_PATH);
-  await fs.mkdir(dir, { recursive: true });
-  await fs.writeFile(DATA_FILE_PATH, JSON.stringify(apps, null, 2));
+  try {
+    const dir = path.dirname(DATA_FILE_PATH);
+    await fs.mkdir(dir, { recursive: true });
+    await fs.writeFile(DATA_FILE_PATH, JSON.stringify(apps, null, 2));
+    console.log("[Apps API] Successfully saved apps data to:", DATA_FILE_PATH);
+  } catch (error) {
+    console.error("[Apps API] Failed to save apps data to:", DATA_FILE_PATH, error);
+    throw error;
+  }
 }
 
 export async function GET() {
