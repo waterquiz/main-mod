@@ -8,12 +8,15 @@ import AdBanner728 from "@/components/AdBanner728";
 import fs from 'fs/promises';
 import path from 'path';
 
+export const dynamic = 'force-dynamic';
+
 async function getApps() {
   try {
-    const dataPath = path.join(process.cwd(), 'src', 'data', 'apps.json');
+    const dataPath = path.resolve(process.cwd(), 'src', 'data', 'apps.json');
     const data = await fs.readFile(dataPath, 'utf-8');
     return JSON.parse(data);
   } catch (err) {
+    console.error("[Home Page] Failed to read apps data at:", path.resolve(process.cwd(), 'src', 'data', 'apps.json'));
     return [];
   }
 }

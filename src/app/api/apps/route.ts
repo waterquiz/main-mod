@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import fs from 'fs/promises';
 import path from 'path';
 
+export const dynamic = 'force-dynamic';
+
 const DATA_FILE_PATH = path.resolve(process.cwd(), 'src', 'data', 'apps.json');
 
 async function getAppsData() {
