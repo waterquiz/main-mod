@@ -27,7 +27,7 @@ export function AppCard({ id, name, developer, icon, iconUrl, rating, size, vers
         <div className="w-16 h-16 rounded-2xl bg-black/5 dark:bg-white/5 flex-shrink-0 overflow-hidden border border-black/5 dark:border-white/5 p-2 relative">
           {iconUrl ? (
             <div className="w-full h-full relative rounded-xl overflow-hidden bg-black/5 dark:bg-white/5">
-               <Image src={iconUrl} alt={name} fill className="object-cover" />
+               <Image src={iconUrl} alt={name} fill className="object-cover" unoptimized />
             </div>
           ) : (
             <div className="w-full h-full rounded-xl bg-gradient-to-br from-[#3DDC84] to-emerald-600 flex items-center justify-center shadow-inner">

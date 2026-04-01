@@ -90,7 +90,7 @@ export default async function AppDetailPage({ params }: { params: Promise<{ slug
           <div className="flex flex-row gap-4 sm:gap-6 items-center sm:items-start">
             <div className={`w-20 h-20 sm:w-32 sm:h-32 rounded-2xl flex items-center justify-center shadow-lg shrink-0 overflow-hidden ${!appData.iconUrl ? 'bg-gradient-to-br from-[#3DDC84] to-emerald-600' : 'bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 relative'}`}>
               {appData.iconUrl ? (
-                <Image src={appData.iconUrl} alt={name} fill className="object-cover" />
+                <Image src={appData.iconUrl} alt={name} fill className="object-cover" unoptimized />
               ) : (
                 <span className="text-white font-bold text-4xl sm:text-5xl capitalize">{name.charAt(0)}</span>
               )}
@@ -156,7 +156,7 @@ export default async function AppDetailPage({ params }: { params: Promise<{ slug
               {appData.screenshotUrls && appData.screenshotUrls.length > 0 ? (
                 appData.screenshotUrls.map((url: string, i: number) => (
                   <div key={i} className="shrink-0 w-40 sm:w-60 aspect-[9/16] bg-black/10 dark:bg-white/10 rounded-xl snap-center flex items-center justify-center overflow-hidden border border-black/10 dark:border-white/10 relative">
-                    <Image src={url} alt={`Screenshot ${i + 1}`} fill className="object-cover" />
+                    <Image src={url} alt={`Screenshot ${i + 1}`} fill className="object-cover" unoptimized />
                   </div>
                 ))
               ) : (
@@ -216,7 +216,7 @@ export default async function AppDetailPage({ params }: { params: Promise<{ slug
                 <Link key={i} href={`/apps/${app.id}`} className="flex items-center gap-4 p-3 rounded-2xl border border-black/5 dark:border-white/5 hover:border-[#3DDC84]/50 hover:bg-black/5 dark:hover:bg-white/5 transition-all cursor-pointer">
                   <div className={`w-10 h-10 rounded-xl flex items-center justify-center font-bold shrink-0 text-white relative overflow-hidden text-sm border border-black/5 dark:border-white/5 ${!app.iconUrl ? 'bg-gradient-to-br from-[#3DDC84] to-emerald-600' : 'bg-black/5 dark:bg-white/5'}`}>
                     {app.iconUrl ? (
-                      <Image src={app.iconUrl} alt={app.appName || "App icon"} fill className="object-cover" />
+                      <Image src={app.iconUrl} alt={app.appName || "App icon"} fill className="object-cover" unoptimized />
                     ) : (
                       (app.appName || "A").charAt(0)
                     )}
