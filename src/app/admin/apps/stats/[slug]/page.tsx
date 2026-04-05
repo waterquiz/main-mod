@@ -1,7 +1,8 @@
 import path from "path";
 import fs from "fs/promises";
 import Link from "next/link";
-import { BarChart, Download, Star, Info, ChevronLeft, Calendar, Package, FileText, LayoutList } from "lucide-react";
+import { BarChart, Star, Info, ChevronLeft, Calendar, Package, FileText, LayoutList } from "lucide-react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 export default async function AppStatsPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -61,7 +62,9 @@ export default async function AppStatsPage({ params }: { params: Promise<{ slug:
         {/* Total Downloads */}
         <div className="bg-black/40 backdrop-blur-sm border border-white/10 p-6 rounded-3xl relative overflow-hidden group">
           <div className="absolute top-0 right-0 p-6 opacity-20 group-hover:opacity-40 transition-opacity">
-            <Download className="w-16 h-16 text-emerald-500" />
+            <div className="w-16 h-16 relative">
+              <Image src="/download-icon.png" alt="Downloads" fill className="object-contain" />
+            </div>
           </div>
           <div className="relative z-10 space-y-2">
             <div className="text-neutral-400 text-sm font-semibold uppercase tracking-wider flex items-center gap-2">

@@ -130,7 +130,12 @@ export default async function AppDetailPage({ params }: { params: Promise<{ slug
               <div className="font-semibold text-sm">{size}</div>
             </div>
             <div className="text-center sm:border-l border-black/5 dark:border-white/5">
-              <div className="text-xs text-foreground/50 mb-1 flex items-center justify-center gap-1"><Download className="w-3 h-3" /> Downloads</div>
+              <div className="text-xs text-foreground/50 mb-1 flex items-center justify-center gap-1">
+                <div className="w-3.5 h-3.5 relative">
+                  <Image src="/download-icon.png" alt="Download" fill className="object-contain" />
+                </div>
+                Downloads
+              </div>
               <div className="font-semibold text-sm">{downloads}</div>
             </div>
             <div className="text-center border-l border-black/5 dark:border-white/5">
@@ -177,20 +182,31 @@ export default async function AppDetailPage({ params }: { params: Promise<{ slug
             {appData.downloadUrl ? (
               appData.downloadUrl.startsWith('http') ? (
                 <a href={appData.downloadUrl} className="w-full sm:max-w-md">
-                  <Button className="w-full h-14 text-lg font-bold shadow-lg shadow-[#3DDC84]/20 flex gap-3 animate-pulse rounded-full">
-                    <Download className="w-6 h-6" /> Download Mod ({size})
+                  <Button className="w-full h-14 text-lg font-bold shadow-lg shadow-[#3DDC84]/20 flex gap-3 animate-pulse rounded-full overflow-hidden relative group">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] transition-transform duration-1000" />
+                    <div className="w-7 h-7 relative">
+                      <Image src="/download-icon.png" alt="Download" fill className="object-contain" />
+                    </div>
+                    Download Mod ({size})
                   </Button>
                 </a>
               ) : (
                 <a href={appData.downloadUrl} download className="w-full sm:max-w-md">
-                  <Button className="w-full h-14 text-lg font-bold shadow-lg shadow-[#3DDC84]/20 flex gap-3 animate-pulse rounded-full">
-                    <Download className="w-6 h-6" /> Download Mod ({size})
+                  <Button className="w-full h-14 text-lg font-bold shadow-lg shadow-[#3DDC84]/20 flex gap-3 animate-pulse rounded-full overflow-hidden relative group">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] transition-transform duration-1000" />
+                    <div className="w-7 h-7 relative">
+                      <Image src="/download-icon.png" alt="Download" fill className="object-contain" />
+                    </div>
+                    Download Mod ({size})
                   </Button>
                 </a>
               )
             ) : (
               <Button disabled className="w-full sm:max-w-md h-14 text-lg font-bold shadow-lg shadow-[#3DDC84]/20 flex gap-3 rounded-full opacity-50">
-                <Download className="w-6 h-6" /> Download Unavailable
+                <div className="w-7 h-7 relative opacity-50 grayscale">
+                  <Image src="/download-icon.png" alt="Download" fill className="object-contain" />
+                </div>
+                Download Unavailable
               </Button>
             )}
           </div>

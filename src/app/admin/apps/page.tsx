@@ -2,7 +2,8 @@
 
 import { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
-import { Plus, Search, Filter, MoreHorizontal, Edit, Trash2, Download, X, Save, BarChart2 } from "lucide-react";
+import { Plus, Search, Filter, MoreHorizontal, Edit, Trash2, X, Save, BarChart2 } from "lucide-react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 export default function ManageAppsPage() {
@@ -138,7 +139,10 @@ export default function ManageAppsPage() {
             className="h-10 border-white/10 bg-black/50 hover:bg-white/10 text-neutral-300 w-full sm:w-auto rounded-xl"
             onClick={handleExport}
           >
-            <Download className="w-4 h-4 mr-2" /> Export
+            <div className="w-4 h-4 relative mr-2">
+              <Image src="/download-icon.png" alt="Export" fill className="object-contain" />
+            </div>
+            Export
           </Button>
         </div>
       </div>
@@ -162,8 +166,8 @@ export default function ManageAppsPage() {
                 <tr key={`${app.id}-${index}`} className="hover:bg-white/[0.02] transition-colors group">
                   <td className="px-6 py-4">
                     <div className="flex items-center gap-4">
-                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#3DDC84] to-emerald-600 flex flex-col items-center justify-center text-white font-bold shrink-0 shadow-lg group-hover:shadow-[#3DDC84]/20 transition-all">
-                        {app.icon}
+                      <div className="w-10 h-10 rounded-xl bg-black/20 flex flex-col items-center justify-center text-white font-bold shrink-0 shadow-lg group-hover:shadow-[#3DDC84]/20 transition-all relative overflow-hidden border border-white/5">
+                        <Image src={app.iconUrl || "/download-icon.png"} alt={app.name} fill className="object-cover" unoptimized />
                       </div>
                       <div>
                         <div className="font-semibold text-white group-hover:text-[#3DDC84] transition-colors hidden sm:block">{app.name}</div>

@@ -2,7 +2,8 @@
 
 import { useState, useRef } from "react";
 import Link from "next/link";
-import { ArrowLeft, UploadCloud, Save, Plus, X, Image as ImageIcon, Smartphone, FileText, CheckCircle2, Download as DownloadIcon } from "lucide-react";
+import { ArrowLeft, UploadCloud, Save, Plus, X, Image as ImageIcon, Smartphone, FileText, CheckCircle2 } from "lucide-react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 const CATEGORIES = [
@@ -171,7 +172,10 @@ export default function UploadAppPage() {
             onClick={() => fileInputRef.current?.click()}
             className="h-11 px-6 font-bold rounded-xl border-white/10 bg-white/5 hover:bg-white/10 transition-all flex items-center gap-2"
           >
-            <DownloadIcon className="w-5 h-5" /> Import Data
+            <div className="w-5 h-5 relative">
+              <Image src="/download-icon.png" alt="Import" fill className="object-contain" />
+            </div>
+            Import Data
           </Button>
           <Button 
             onClick={handleSubmit} 

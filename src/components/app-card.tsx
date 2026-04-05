@@ -21,6 +21,10 @@ export function AppCard({ id, name, developer, icon, iconUrl, rating, size, vers
   return (
     <Link href={`/apps/${id}`} className="group relative bg-white dark:bg-black/20 border border-black/5 dark:border-white/5 rounded-2xl p-4 flex flex-col gap-4 hover:shadow-xl hover:border-[#3DDC84]/50 transition-all duration-300 overflow-hidden">
       {/* Decorative gradient blob on hover */}
+      <div className="absolute top-2 right-2 w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+        <Image src="/download-icon.png" alt="Download" fill className="object-contain" />
+      </div>
+      {/* Decorative gradient blob on hover */}
       <div className="absolute -inset-x-12 -inset-y-12 bg-gradient-to-br from-[#3DDC84]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-[50%] blur-2xl" />
       
       <div className="flex gap-4 items-start relative z-10">

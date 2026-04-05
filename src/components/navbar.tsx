@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Search, Menu, X } from "lucide-react";
+import Image from "next/image";
 import { ThemeToggle } from "./theme-toggle";
 import { useState, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
@@ -37,8 +38,8 @@ export function Navbar() {
         {/* Logo */}
         <div className="flex items-center gap-6">
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-[#3DDC84] flex items-center justify-center">
-              <span className="text-white font-bold text-xl">{siteName.charAt(0).toUpperCase()}</span>
+            <div className="w-10 h-10 relative flex items-center justify-center">
+              <Image src="/download-icon.png" alt="Bili Mod Logo" fill className="object-contain drop-shadow-[0_0_8px_rgba(61,220,132,0.4)]" />
             </div>
             <span className="hidden sm:inline-block font-bold text-xl tracking-tight">{siteName}</span>
           </Link>

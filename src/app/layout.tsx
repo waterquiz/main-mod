@@ -9,8 +9,39 @@ import DynamicAds from "@/components/DynamicAds";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Bili Mod - Download Mod APK Files",
+  metadataBase: new URL('https://www.bilimod.com'),
+  title: {
+    default: "Bili Mod - Download Mod APK Files",
+    template: "%s | Bili Mod"
+  },
   description: "Provide users with safe downloads of Android apps, games, and modded APK versions with detailed information, screenshots, and installation guides.",
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://www.bilimod.com',
+    siteName: 'Bili Mod',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Bili Mod',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Bili Mod - Download Mod APK Files',
+    description: 'Safe downloads of Android apps, games, and modded APKs.',
+    images: ['/og-image.png'],
+  },
+  icons: {
+    icon: '/download-icon.png',
+    apple: '/download-icon.png',
+  },
 };
 
 export default function RootLayout({
@@ -18,8 +49,29 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Bili Mod',
+    url: 'https://www.bilimod.com',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: 'https://www.bilimod.com/search?q={search_term_string}',
+      },
+      'query-input': 'required name=search_term_string',
+    },
+  };
+
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={`${inter.className} antialiased bg-background text-foreground min-h-screen flex flex-col`}>
         <ThemeProvider
           attribute="class"

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { PackageSearch, Download, Users, TrendingUp, AlertCircle, RefreshCcw } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
@@ -75,7 +76,17 @@ export default function AdminDashboardPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <StatCard title="Total Apps" value={recentMods.length.toString()} change="Up to date" isIncrease icon={PackageSearch} />
         <StatCard title="Real-Time Active Users" value={formatNumber(activeUsers)} change="Live" isIncrease icon={Users} />
-        <StatCard title="All-Time Downloads" value="0" change="0%" isIncrease icon={Download} />
+        <StatCard 
+          title="All-Time Downloads" 
+          value="0" 
+          change="0%" 
+          isIncrease 
+          icon={() => (
+            <div className="w-6 h-6 relative shrink-0">
+              <Image src="/download-icon.png" alt="Downloads" fill className="object-contain" />
+            </div>
+          )} 
+        />
         <StatCard title="Updates Pending (New Version)" value="0" change="0%" isIncrease={false} icon={AlertCircle} glowColor="rgba(239,68,68,0.2)" />
       </div>
 
@@ -187,7 +198,7 @@ function StatCard({ title, value, change, isIncrease, icon: Icon, glowColor = "r
       <div className="relative p-7 rounded-3xl bg-neutral-900/80 backdrop-blur-md border border-white/10 hover:border-white/20 transition-colors h-full flex flex-col justify-between">
         <div className="flex justify-between items-start mb-4">
           <div className="p-3 rounded-2xl bg-black/50 border border-white/5">
-            <Icon className="w-6 h-6 text-neutral-400" />
+            {typeof Icon === 'function' ? <Icon /> : <Icon className="w-6 h-6 text-neutral-400" />}
           </div>
           <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${isIncrease ? 'bg-[#3DDC84]/20 text-[#3DDC84]' : 'bg-neutral-500/20 text-neutral-400'}`}>
             {change}
