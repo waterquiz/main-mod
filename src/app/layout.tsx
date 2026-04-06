@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     default: "Bili Mod - Download Mod APK Files",
     template: "%s | Bili Mod"
   },
-  description: "Provide users with safe downloads of Android apps, games, and modded APK versions with detailed information, screenshots, and installation guides.",
+  description: "Bilimod trusted platform for safe, fast, and secure Android app and game mod apk downloads.",
   alternates: {
     canonical: '/',
   },
@@ -32,15 +32,16 @@ export const metadata: Metadata = {
       },
     ],
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Bili Mod - Download Mod APK Files',
-    description: 'Safe downloads of Android apps, games, and modded APKs.',
-    images: ['/og-image.png'],
-  },
+  manifest: '/manifest.json',
   icons: {
-    icon: '/download-icon.png',
-    apple: '/download-icon.png',
+    icon: [
+      { url: '/icon.png?v=2' },
+      { url: '/download-icon.png?v=2', sizes: '32x32', type: 'image/png' },
+      { url: '/download-icon.png?v=2', sizes: '192x192', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-icon.png?v=2' },
+    ],
   },
 };
 

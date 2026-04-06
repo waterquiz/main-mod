@@ -34,8 +34,8 @@ export function AppCard({ id, name, developer, icon, iconUrl, rating, size, vers
                <Image src={iconUrl} alt={name} fill className="object-cover" unoptimized />
             </div>
           ) : (
-            <div className="w-full h-full rounded-xl bg-gradient-to-br from-[#3DDC84] to-emerald-600 flex items-center justify-center shadow-inner">
-              <span className="text-white font-bold text-xl">{name.charAt(0)}</span>
+            <div className="w-full h-full relative rounded-xl overflow-hidden bg-black/5 dark:bg-white/5">
+               <Image src="/download-icon.png" alt={name} fill className="object-contain p-2" unoptimized />
             </div>
           )}
         </div>

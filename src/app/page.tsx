@@ -38,8 +38,8 @@ export default async function Home() {
   const FEATURED_APPS = fileApps.map((app: any) => ({
     ...app,
     name: app.appName, // AppCard expects 'name'
-    iconUrl: app.iconUrl,
-    icon: app.appName?.charAt(0) || "A" // fallback icon mapping
+    iconUrl: app.iconUrl || "/download-icon.png",
+    icon: "/download-icon.png" // fallback icon mapping
   }));
 
   return (
