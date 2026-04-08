@@ -51,8 +51,8 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
           <div className="lg:col-span-2 space-y-4">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 relative flex items-center justify-center">
-                <Image src="/bili-logo.png" alt="Bili Mod Logo" fill className="object-contain drop-shadow-[0_0_8px_rgba(61,220,132,0.4)]" />
+              <div className="w-8 h-8 relative flex items-center justify-center rounded-full overflow-hidden">
+                <Image src="/bili-logo.png" alt="Bili Mod Logo" fill className="object-cover drop-shadow-[0_0_8px_rgba(61,220,132,0.4)]" />
               </div>
               <span className="font-bold text-xl tracking-tight">{siteName}</span>
             </Link>
