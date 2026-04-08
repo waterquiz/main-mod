@@ -83,7 +83,7 @@ export default function AdminDashboardPage() {
           isIncrease 
           icon={() => (
             <div className="w-6 h-6 relative shrink-0">
-              <Image src="/download-icon.png" alt="Downloads" fill className="object-contain" />
+              <Image src="/bili-logo.png" alt="Downloads" fill className="object-contain" />
             </div>
           )} 
         />

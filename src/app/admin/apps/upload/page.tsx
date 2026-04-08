@@ -173,7 +173,7 @@ export default function UploadAppPage() {
             className="h-11 px-6 font-bold rounded-xl border-white/10 bg-white/5 hover:bg-white/10 transition-all flex items-center gap-2"
           >
             <div className="w-5 h-5 relative">
-              <Image src="/download-icon.png" alt="Import" fill className="object-contain" />
+              <Image src="/bili-logo.png" alt="Import" fill className="object-contain" />
             </div>
             Import Data
           </Button>

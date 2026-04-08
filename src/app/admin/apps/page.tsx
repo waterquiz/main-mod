@@ -140,7 +140,7 @@ export default function ManageAppsPage() {
             onClick={handleExport}
           >
             <div className="w-4 h-4 relative mr-2">
-              <Image src="/download-icon.png" alt="Export" fill className="object-contain" />
+              <Image src="/bili-logo.png" alt="Export" fill className="object-contain" />
             </div>
             Export
           </Button>
@@ -167,7 +167,7 @@ export default function ManageAppsPage() {
                   <td className="px-6 py-4">
                     <div className="flex items-center gap-4">
                       <div className="w-10 h-10 rounded-xl bg-black/20 flex flex-col items-center justify-center text-white font-bold shrink-0 shadow-lg group-hover:shadow-[#3DDC84]/20 transition-all relative overflow-hidden border border-white/5">
-                        <Image src={app.iconUrl || "/download-icon.png"} alt={app.name} fill className="object-cover" unoptimized />
+                        <Image src={app.iconUrl || "/bili-logo.png"} alt={app.name} fill className="object-cover" unoptimized />
                       </div>
                       <div>
                         <div className="font-semibold text-white group-hover:text-[#3DDC84] transition-colors hidden sm:block">{app.name}</div>
