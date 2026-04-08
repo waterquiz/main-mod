@@ -39,7 +39,7 @@ export function Navbar() {
         <div className="flex items-center gap-6">
           <Link href="/" className="flex items-center gap-2">
             <div className="w-10 h-10 relative flex items-center justify-center">
-              <Image src="/download-icon.png" alt="Bili Mod Logo" fill className="object-contain drop-shadow-[0_0_8px_rgba(61,220,132,0.4)]" />
+              <Image src="/bili-logo.png" alt="Bili Mod Logo" fill className="object-contain drop-shadow-[0_0_8px_rgba(61,220,132,0.4)]" />
             </div>
             <span className="hidden sm:inline-block font-bold text-xl tracking-tight">{siteName}</span>
           </Link>

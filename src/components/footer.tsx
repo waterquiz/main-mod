@@ -52,7 +52,7 @@ export function Footer() {
           <div className="lg:col-span-2 space-y-4">
             <Link href="/" className="flex items-center gap-2">
               <div className="w-8 h-8 relative flex items-center justify-center">
-                <Image src="/download-icon.png" alt="Bili Mod Logo" fill className="object-contain drop-shadow-[0_0_8px_rgba(61,220,132,0.4)]" />
+                <Image src="/bili-logo.png" alt="Bili Mod Logo" fill className="object-contain drop-shadow-[0_0_8px_rgba(61,220,132,0.4)]" />
               </div>
               <span className="font-bold text-xl tracking-tight">{siteName}</span>
             </Link>
