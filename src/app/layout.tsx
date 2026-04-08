@@ -32,17 +32,6 @@ export const metadata: Metadata = {
       },
     ],
   },
-  manifest: '/manifest.json',
-  icons: {
-    icon: [
-      { url: '/icon.png?v=2' },
-      { url: '/download-icon.png?v=2', sizes: '32x32', type: 'image/png' },
-      { url: '/download-icon.png?v=2', sizes: '192x192', type: 'image/png' },
-    ],
-    apple: [
-      { url: '/apple-icon.png?v=2' },
-    ],
-  },
 };
 
 export default function RootLayout({
