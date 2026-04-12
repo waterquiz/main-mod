@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { ShieldCheck, Lock } from "lucide-react";
+import { Lock } from "lucide-react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 export default function LoginPage() {
@@ -45,8 +46,11 @@ export default function LoginPage() {
       
       <div className="w-full max-w-md bg-neutral-900/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 relative z-10 shadow-2xl animate-in fade-in slide-in-from-bottom-8 duration-700">
         <div className="text-center mb-10">
-          <div className="w-16 h-16 mx-auto bg-gradient-to-br from-[#3DDC84] to-emerald-600 rounded-2xl flex items-center justify-center mb-6 shadow-[#3DDC84]/20 shadow-xl">
-            <ShieldCheck className="w-8 h-8 text-black" />
+          <div className="w-20 h-20 mx-auto relative mb-6 group transition-all duration-500 hover:scale-110">
+            <div className="absolute inset-0 bg-[#3DDC84]/20 blur-2xl rounded-full animate-pulse group-hover:bg-[#3DDC84]/30 duration-1000" />
+            <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 p-2 bg-neutral-900/50 backdrop-blur-sm">
+              <Image src="/bili-logo.png" alt="Bili Mod" fill className="object-contain" />
+            </div>
           </div>
           <h1 className="text-3xl font-black text-white tracking-tight">Admin Gateway</h1>
           <p className="text-neutral-400 font-medium mt-2">Sign in to manage the platform</p>

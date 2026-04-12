@@ -184,9 +184,6 @@ export default async function AppDetailPage({ params }: { params: Promise<{ slug
                 <a href={appData.downloadUrl} className="w-full sm:max-w-md">
                   <Button className="w-full h-14 text-lg font-bold shadow-lg shadow-[#3DDC84]/20 flex gap-3 animate-pulse rounded-full overflow-hidden relative group">
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] transition-transform duration-1000" />
-                    <div className="w-7 h-7 relative">
-                      <Image src="/download-icon.png" alt="Download" fill className="object-contain" />
-                    </div>
                     Download Mod ({size})
                   </Button>
                 </a>
@@ -194,18 +191,12 @@ export default async function AppDetailPage({ params }: { params: Promise<{ slug
                 <a href={appData.downloadUrl} download className="w-full sm:max-w-md">
                   <Button className="w-full h-14 text-lg font-bold shadow-lg shadow-[#3DDC84]/20 flex gap-3 animate-pulse rounded-full overflow-hidden relative group">
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] transition-transform duration-1000" />
-                    <div className="w-7 h-7 relative">
-                      <Image src="/download-icon.png" alt="Download" fill className="object-contain" />
-                    </div>
                     Download Mod ({size})
                   </Button>
                 </a>
               )
             ) : (
               <Button disabled className="w-full sm:max-w-md h-14 text-lg font-bold shadow-lg shadow-[#3DDC84]/20 flex gap-3 rounded-full opacity-50">
-                <div className="w-7 h-7 relative opacity-50 grayscale">
-                  <Image src="/download-icon.png" alt="Download" fill className="object-contain" />
-                </div>
                 Download Unavailable
               </Button>
             )}
